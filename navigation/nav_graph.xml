@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/IntroductionFragment">
+
+    <fragment
+        android:id="@+id/IntroductionFragment"
+        android:name="com.example.campustouring.IntroductionFragment"
+        android:label="@string/introduction"
+        tools:layout="@layout/fragment_introduction">
+        <action
+            android:id="@+id/action_IntroductionFragment_to_MapFragment"
+            app:destination="@id/MapFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/MapFragment"
+        android:name="com.example.campustouring.MapFragment"
+        android:label="@string/map"
+        tools:layout="@layout/fragment_map">
+
+        <action
+            android:id="@+id/action_MapFragment_to_ARFragment"
+            app:destination="@id/ARFragment" />
+        <action
+            android:id="@+id/action_MapFragment_to_LocationInputFragment"
+            app:destination="@id/LocationInputFragment" />
+        <action
+            android:id="@+id/action_MapFragment_to_MarkerInfoFragment"
+            app:destination="@id/MarkerInfoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ARFragment"
+        android:name="com.example.campustouring.ARFragment"
+        android:label="AR"
+        tools:layout="@layout/fragment_a_r">
+
+        <action
+            android:id="@+id/action_ARFragment_to_MapFragment"
+            app:destination="@id/MapFragment" />
+
+        <action
+            android:id="@+id/action_ARFragment_to_MarkerInfoFragment"
+            app:destination="@id/MarkerInfoFragment"/>
+
+        <action
+            android:id="@+id/action_ARFragment_to_LocationInputFragment"
+            app:destination="@id/locationInputFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/SettingsFragment"
+        android:name="com.example.campustouring.SettingsFragment"
+        android:label="@string/action_settings"
+        tools:layout="@layout/fragment_settings">
+    </fragment>
+
+    <fragment
+        android:id="@+id/MarkerInfoFragment"
+        android:name="com.example.campustouring.MarkerInfoFragment"
+        android:label="@string/markerinfo"
+        tools:layout="@layout/fragment_marker_info">
+        <action
+            android:id="@+id/action_MarkerInfoFragment_to_MapFragment"
+            app:destination="@id/ARFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/LocationInputFragment"
+        android:name="com.example.campustouring.LocationInputFragment"
+        android:label="@string/locationinput"
+        tools:layout="@layout/fragment_location_input" >
+        <action
+            android:id="@+id/action_LocationInputFragment_to_MapFragment"
+            app:destination="@id/MapFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/locationInputFragment"
+        android:name="com.example.campustouring.LocationInputFragment"
+        android:label="Create a New Location"
+        tools:layout="@layout/fragment_location_input">
+        <action
+            android:id="@+id/action_LocationInputFragment_to_ARFragment"
+            app:destination="@id/ARFragment" />
+        <action
+            android:id="@+id/action_LocationInputFragment_to_MapFragment"
+            app:destination="@id/MapFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allMarkersFragment"
+        android:name="com.example.campustouring.AllMarkersFragment"
+        android:label="All Default Markers"
+        tools:layout="@layout/fragment_all_markers_list">
+    <action
+        android:id="@+id/action_AllMarkersFragment_to_MarkerInfoFragment"
+        app:destination="@id/MarkerInfoFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LocationInputFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="307dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="#005035"
+            android:text="@string/saveText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+        <EditText
+            android:id="@+id/editNewTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="101dp"
+            android:layout_marginBottom="13dp"
+            android:ems="10"
+            android:hint="@string/titleText"
+            android:inputType="text"
+            app:layout_constraintBottom_toTopOf="@+id/editNewSubTitleText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragmentTextView" />
+
+        <EditText
+            android:id="@+id/editNewSubTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:ems="10"
+            android:hint="@string/subTitleText"
+            android:inputType="text"
+            app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+            app:layout_constraintEnd_toEndOf="@+id/editNewTitleText"
+            app:layout_constraintStart_toStartOf="@+id/editNewTitleText"
+            app:layout_constraintTop_toBottomOf="@+id/editNewTitleText" />
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="377dp"
+            android:layout_height="279dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="198dp"
+            app:layout_constraintBottom_toTopOf="@+id/saveButton"
+            app:layout_constraintEnd_toEndOf="@+id/editNewSubTitleText"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="@+id/editNewSubTitleText"
+            app:layout_constraintTop_toBottomOf="@+id/editNewSubTitleText">
+
+            <EditText
+                android:id="@+id/editNewDescriptionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="@string/descriptionText"
+                android:inputType="textMultiLine" />
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/fragmentTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="145dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="145dp"
+            android:text="Create A New Point"
+            android:textAllCaps="true"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MarkerInfoFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="176dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="176dp"
+            android:text="@string/titleText"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buildingImageView" />
+
+        <ImageView
+            android:id="@+id/buildingImageView"
+            android:layout_width="314dp"
+            android:layout_height="176dp"
+            android:layout_marginStart="142dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="142dp"
+            android:layout_marginBottom="60dp"
+            app:layout_constraintBottom_toTopOf="@+id/titleTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/unc_charlotte_main_logo"
+            tools:src="@drawable/unc_charlotte_main_logo"
+            tools:srcCompat="@drawable/unc_charlotte_main_logo" />
+
+        <TextView
+            android:id="@+id/subTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/subTitleText"
+            android:textAlignment="center"
+            android:textColor="#8A8A8A"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/titleTextView"
+            app:layout_constraintStart_toStartOf="@+id/titleTextView"
+            app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+        <Button
+            android:id="@+id/editButton"
+            android:layout_width="88dp"
+            android:layout_height="48dp"
+            android:backgroundTint="#FFC107"
+            android:text="@string/editText"
+            android:textSize="16sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/deleteButton"
+            app:layout_constraintStart_toStartOf="@+id/editTitleText"
+            app:layout_constraintTop_toTopOf="@+id/deleteButton"
+            app:layout_constraintVertical_bias="0.0"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/deleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#F44336"
+            android:text="@string/deleteText"
+            android:textSize="16sp"
+            android:visibility="invisible"
+            app:backgroundTint="@android:color/black"
+            app:layout_constraintEnd_toEndOf="@+id/editTitleText"
+            app:layout_constraintTop_toBottomOf="@+id/scrollEditDescriptionText"
+            tools:visibility="visible" />
+
+        <EditText
+            android:id="@+id/editTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="@string/titleText"
+            android:inputType="text"
+            android:text="@string/titleText"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buildingImageView" />
+
+        <EditText
+            android:id="@+id/editSubTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/subTitleText"
+            android:inputType="text"
+            android:text="@string/subTitleText"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/editTitleText"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/editTitleText"
+            app:layout_constraintTop_toBottomOf="@+id/editTitleText" />
+
+        <ScrollView
+            android:id="@+id/scrollEditDescriptionText"
+            android:layout_width="403dp"
+            android:layout_height="199dp"
+            app:layout_constraintEnd_toEndOf="@+id/editSubTitleText"
+            app:layout_constraintStart_toStartOf="@+id/editSubTitleText"
+            app:layout_constraintTop_toBottomOf="@+id/editSubTitleText">
+
+            <EditText
+                android:id="@+id/editDescriptionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="@string/descriptionText"
+                android:inputType="textMultiLine"
+                android:text="@string/descriptionText"
+                android:textSize="16sp"
+                android:visibility="invisible" />
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/scrollDescriptionTextView"
+            android:layout_width="385dp"
+            android:layout_height="234dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/subTitleTextView"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="@+id/subTitleTextView"
+            app:layout_constraintTop_toBottomOf="@+id/subTitleTextView">
+
+            <TextView
+                android:id="@+id/descriptionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/descriptionText"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
